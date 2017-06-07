@@ -39,10 +39,16 @@ git branch -D `git branch | grep -E 'FEAT'`
   git stash drop stash@{3}
 
 ### git push --force-with-lease
-https://robots.thoughtbot.com/git-push-force-with-lease
+  https://robots.thoughtbot.com/git-push-force-with-lease
 
-### git auto-squashing
-https://robots.thoughtbot.com/autosquashing-git-commits
+### auto-squashing
+  https://robots.thoughtbot.com/autosquashing-git-commits
+
+### explicit repository excludes:
+  add to `.git/info/exclude` then do `git update-index --assume-unchanged <file>`
+  https://help.github.com/articles/ignoring-files/#explicit-repository-excludes
+  https://stackoverflow.com/questions/4308610/how-to-ignore-certain-files-in-git
+
 
 
 
