@@ -1,4 +1,37 @@
 ## Git
+### using multiple git accounts on the same machine
+  https://kev.inburke.com/kevin/multiple-github-ssh-accounts/
+  Setting up personal account:
+    Set email as blank in global git config: ~/.gitconfig
+      [user]
+        name = John Hinrichs
+        email = ''
+
+    Create new ssh key and add to Github:
+      ssh-keygen -t rsa -b 4096 -C "jmhinric@gmail.com" (enter new name for the rsa key- id_rsa_github_jmhinric)
+      ssh-agent
+      ssh-add -K ~/.ssh/id_rsa_github_jmhinric
+      pbcopy < ~/.ssh/id_rsa_github_jmhinric.pub
+      paste into Github ssh keys
+
+    Update ~/.ssh/config:
+      Host github.com-jmhinric
+      IdentityFile ~/.ssh/id_rsa_github_jmhinric
+      HostName github.com
+      User jmhinric
+
+    Clone a repo using the new ssh config:
+      git clone git@github.com-jmhinric:jmhinric/things_i_learned.git
+
+      In the directory of that repo, set your git config email:
+        git config user.email = 'jmhinric@gmail.com'
+
+      => Now you can make commits and push
+
+### explicit repository excludes:
+  add to `.git/info/exclude` then do `git update-index --assume-unchanged <file>`
+  https://help.github.com/articles/ignoring-files/#explicit-repository-excludes
+  https://stackoverflow.com/questions/4308610/how-to-ignore-certain-files-in-git
 
 ### show diff of latest commit
   git show HEAD
@@ -43,12 +76,6 @@ git branch -D `git branch | grep -E 'FEAT'`
 
 ### auto-squashing
   https://robots.thoughtbot.com/autosquashing-git-commits
-
-### explicit repository excludes:
-  add to `.git/info/exclude` then do `git update-index --assume-unchanged <file>`
-  https://help.github.com/articles/ignoring-files/#explicit-repository-excludes
-  https://stackoverflow.com/questions/4308610/how-to-ignore-certain-files-in-git
-
 
 
 
