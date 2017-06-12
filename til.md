@@ -30,6 +30,7 @@
 
 ### explicit repository excludes:
   add to `.git/info/exclude` then do `git update-index --assume-unchanged <file>`
+  to undo this:  `git update-index --no-assume-unchanged <file>`
   https://help.github.com/articles/ignoring-files/#explicit-repository-excludes
   https://stackoverflow.com/questions/4308610/how-to-ignore-certain-files-in-git
 
