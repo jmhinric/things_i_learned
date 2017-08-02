@@ -582,7 +582,9 @@ in config/initializers/airbrake.rb:
 ### Ted Price command line tools
   https://gist.github.com/pricees/b19dab5f584ab340a7b5
 
-
+### watch/free
+  free -m => shows free space (in megabytes?)
+  watch "free -m" => updates the command every two seconds
 
 
 
