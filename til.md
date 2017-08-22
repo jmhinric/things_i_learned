@@ -431,6 +431,10 @@ ls -lah ~/Library/Containers/com.docker.docker/Data/com.docker.driver.amd64-linu
 rm ~/Library/Containers/com.docker.docker/Data/com.docker.driver.amd64-linux/Docker.qcow2
 
 
+  #### Increase docker disk space in local git:
+  https://gist.github.com/stefanfoulis/5bd226b25fa0d4baedc4803fc002829e
+
+
 
 
 
