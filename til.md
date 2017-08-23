@@ -590,6 +590,14 @@ in config/initializers/airbrake.rb:
   free -m => shows free space (in megabytes?)
   watch "free -m" => updates the command every two seconds
 
+### screen
+  To execute a process in an ssh connection, be able to close the connection, then "reattach" later:
+  Commands:
+  screen
+  (execute command e.g. bundle exec rails runner ...)
+  Ctrl-a Ctrl-d (exits)
+  screen -r (reconnects)
+
 
 
 ####################################################################################################
