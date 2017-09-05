@@ -598,6 +598,9 @@ in config/initializers/airbrake.rb:
   Ctrl-a Ctrl-d (exits)
   screen -r (reconnects)
 
+  To kill the screen once you're done with it:
+  Ctrl-a k (It will ask if you really want to kill it)
+
 
 
 ####################################################################################################
