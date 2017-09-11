@@ -612,6 +612,9 @@ redis-cli monitor
 in project root:
 watch -n 30 "ps axuw | grep bin/[c]onsumer || init_scripts/consumer_daemon.sh start"
 
+### clear the redis queue
+`Sidekiq.redis { |r|  r.flushall }`
+
 
 
 
