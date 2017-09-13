@@ -601,6 +601,11 @@ in config/initializers/airbrake.rb:
   To kill the screen once you're done with it:
   Ctrl-a k (It will ask if you really want to kill it)
 
+### cat/sort/diff/wc
+  `cat unsorted_csv.csv | sort > sorted_csv.csv`
+  `diff a1.csv a2.csv`
+  `diff a1.csv a2.csv | wc -l`
+
 
 
 ####################################################################################################
