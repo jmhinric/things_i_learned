@@ -86,6 +86,9 @@ git branch -D `git branch | grep -E 'FEAT'`
 ## Postgres
   rm /usr/local/var/postgres/postmaster.pid
 
+### Get size of entire database
+SELECT pg_size_pretty(pg_database_size('cmm_integration')) As fulldbsize;
+
 ### Prod dump restore
   pg_restore -c -F c -d local_db_name -v /Users/john.hinrichs/Downloads/db_dump_name.sql.gz
 
@@ -618,7 +621,15 @@ in project root:
 watch -n 30 "ps axuw | grep bin/[c]onsumer || init_scripts/consumer_daemon.sh start"
 
 ### clear the redis queue
-`Sidekiq.redis { |r|  r.flushall }`
+Sidekiq.redis { |r|  r.flushall }
+
+### delete a sidekiq job
+queue = Sidekiq::Queue.new("default")
+queue.each do |job|
+  job.klass # => 'MyWorker'
+  job.args # => [1, 2, 3]
+  job.delete if job.jid == 'abcdef1234567890'
+end
 
 
 
