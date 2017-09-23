@@ -24,7 +24,7 @@
       git clone git@github.com-jmhinric:jmhinric/things_i_learned.git
 
       In the directory of that repo, set your git config email:
-        git config user.email = 'jmhinric@gmail.com'
+        git config user.email "jmhinric@gmail.com"
 
       => Now you can make commits and push
 
@@ -33,6 +33,12 @@
   to undo this:  `git update-index --no-assume-unchanged <file>`
   https://help.github.com/articles/ignoring-files/#explicit-repository-excludes
   https://stackoverflow.com/questions/4308610/how-to-ignore-certain-files-in-git
+
+### amend author info of latest commit
+  git commit --amend --author="Author Name <email@address.com>"
+
+### move changes of latest commit to unstaged
+  git reset HEAD~
 
 ### show diff of latest commit
   git show HEAD
