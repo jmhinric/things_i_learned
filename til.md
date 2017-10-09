@@ -544,6 +544,13 @@ $stderr
 DATABASE_URL=postgresql://cmm:ervDFl7qpdZ1VkmmO4zgQGJUs7HYWe@localhost:15432/integration_db be rails c
 (in separate tab must be ssh'ed to the envt)
 
+### Save json to a file
+file = File.open('blah.json', 'w+')
+file << '['
+array.map(&:to_json).each_with_index { |k, i| file << k; file << "," unless i == (array.size - 1) };
+file << ']'
+file.close
+
 
 
 
