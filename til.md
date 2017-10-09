@@ -551,6 +551,13 @@ array.map(&:to_json).each_with_index { |k, i| file << k; file << "," unless i ==
 file << ']'
 file.close
 
+### Use unpublished code from a gem
+In the root Gemfile, specify a `path` to a separate directory that is the repo of the gem.
+You can make changes to the gem there on a local branch.
+After adding to the Gemfile, run `bundle`
+
+gem 'some-great-gem', path: '../some-great-gem'
+
 
 
 
