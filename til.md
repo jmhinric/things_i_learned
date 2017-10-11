@@ -34,8 +34,9 @@
   https://help.github.com/articles/ignoring-files/#explicit-repository-excludes
   https://stackoverflow.com/questions/4308610/how-to-ignore-certain-files-in-git
 
-### amend author info of latest commit
+### amend author/date info of latest commit
   git commit --amend --author="Author Name <email@address.com>"
+  git commit --amend --date="Thu Sep 28 11:46:59 2017 -0500"
 
 ### move changes of latest commit to unstaged
   git reset HEAD~
