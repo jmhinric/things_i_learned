@@ -630,6 +630,9 @@ in config/initializers/airbrake.rb:
   `diff a1.csv a2.csv`
   `diff a1.csv a2.csv | wc -l`
 
+### Disconnected ssh session
+  To kill it:  <Enter>, then <Shift> + ~
+
 
 
 ####################################################################################################
