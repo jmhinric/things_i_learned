@@ -625,6 +625,16 @@ in config/initializers/airbrake.rb:
   To kill the screen once you're done with it:
   Ctrl-a k (It will ask if you really want to kill it)
 
+  When doing `screen -r` and given this message:
+  ```
+  There are several suitable screens on:
+  16694.pts-0.peterw  (Detached)
+  32179.pts-0.peterw  (Detached)
+  Type "screen [-d] -r [pid.]tty.host" to resume one of them.
+  ```
+  Execute:
+  screen -r 16694
+
 ### cat/sort/diff/wc
   `cat unsorted_csv.csv | sort > sorted_csv.csv`
   `diff a1.csv a2.csv`
