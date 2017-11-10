@@ -643,6 +643,11 @@ in config/initializers/airbrake.rb:
 ### Disconnected ssh session
   To kill it:  <Enter>, then <Shift> + ~
 
+### cron jobs
+  `0 12 2 * * cd /some/path/blah && RAILS_ENV=development bundle exec rake some_task:execute` - 12:00 on second day of month
+  `7 * * * * cd /some/path/blah && RAILS_ENV=development bundle exec rake some_task:execute`- at :07 every hour, every day
+  `*/10 * * * * cd /some/path/blah && RAILS_ENV=development bundle exec rake some_task:execute`- every 10 minutes, every hour, every day
+
 
 
 ####################################################################################################
