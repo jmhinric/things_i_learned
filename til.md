@@ -648,6 +648,18 @@ in config/initializers/airbrake.rb:
   `7 * * * * cd /some/path/blah && RAILS_ENV=development bundle exec rake some_task:execute`- at :07 every hour, every day
   `*/10 * * * * cd /some/path/blah && RAILS_ENV=development bundle exec rake some_task:execute`- every 10 minutes, every hour, every day
 
+### Redirecting input and output
+  Redirect output to a file: `date > file1.txt`
+
+  Redirect input and output: `sort < file1.txt > file2.txt`
+
+  Redirect output to input of another program with a pipe:
+  `cat file1 file2 file3 | sort > /dev/file4.txt`
+
+### & (background job)
+  `&` after a command makes it a background job- shell not wait for the program to complete before giving the prompt again:
+  `cat file1 file2 file3 | sort > /dev/file4.txt &`
+
 
 
 ####################################################################################################
