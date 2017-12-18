@@ -1,4 +1,9 @@
 ## Git
+### diff'ing csvs:
+  https://stackoverflow.com/questions/16804074/tool-to-diff-csv-files-at-the-field-level
+  `git diff --color-words x.csv y.csv`
+  `git diff --no-index --color-words x.csv y.csv`
+
 ### using multiple git accounts on the same machine
   https://kev.inburke.com/kevin/multiple-github-ssh-accounts/
   Setting up personal account:
