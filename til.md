@@ -98,20 +98,23 @@ git branch -D `git branch | grep -E 'FEAT'`
 ## Postgres
   rm /usr/local/var/postgres/postmaster.pid
 
+### Run command from command line
+  psql development_db -c "select * from users limit 50"
+
+### Save SQL output to .csv file
+  psql development_db -c "copy(select * from users limit 50) to stdout csv header" > foo.csv
+
 ### Get size of entire database
-SELECT pg_size_pretty(pg_database_size('cmm_integration')) As fulldbsize;
+  SELECT pg_size_pretty(pg_database_size('cmm_integration')) As fulldbsize;
 
 ### Prod dump restore
   pg_restore -c -F c -d local_db_name -v /Users/john.hinrichs/Downloads/db_dump_name.sql.gz
 
-### integration environment postgres config:
-puts ActiveRecord::Base.connection.instance_variable_get :@connection_parameters
-
-### password on integration
-cat ~/.pgpass
+### Get environment config:
+  puts ActiveRecord::Base.connection.instance_variable_get :@connection_parameters
 
 ### switching dbs
-https://gist.github.com/mswieboda/92b205153f79e7d62cad6bf205c34002
+  https://gist.github.com/mswieboda/92b205153f79e7d62cad6bf205c34002
 
 ### To save a db dump:
   1. pg_dump development_db > ~/Downloads/local_db_20160516.sql
