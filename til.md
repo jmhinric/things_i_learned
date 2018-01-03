@@ -593,6 +593,12 @@ in config/initializers/airbrake.rb:
 ####################################################################################################
 ## Linux
 
+### curl example
+  curl -i -G \
+  -d 'fields=name,pixel' \
+  -d 'access_token=blah' \
+  https://graph.facebook.com/v2.10/abc-123
+
 ### sed
   sed -i '' 's/SelectAdServerAccountDialog/DeliverySourceAccountsDialog/g' `ag -l --nocolor 'SelectAdServerAccountDialog' .`
 
