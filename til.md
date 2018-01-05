@@ -98,6 +98,27 @@ git branch -D `git branch | grep -E 'FEAT'`
 ## Postgres
   rm /usr/local/var/postgres/postmaster.pid
 
+### exporting and importing subset of data
+  https://gist.github.com/ddrscott/8eed79573192d982486d7e43e3f01211
+
+  export source data to file:
+    psql anon -c "copy (SELECT * FROM assets WHERE color='red') to stdout csv header" > assets.csv
+
+  create new database instance (without password):
+    docker run --name postgres-9.6 -e POSTGRES_PASSWORD='' -d -p 65436:5432 postgres:9.6
+
+  copy table screma:
+    pg_dump --schema-only --table=assets anon > schema.sql
+
+  might need to remove foreign keys:
+    $EDITOR schema.sql
+
+  create new schema:
+    psql -h localhost -p 65436 -U postgres < schema.sql
+
+  insert into destination DB:
+    psql -h localhost -p 65436 -U postgres -c 'copy assets from stdin with (format csv, header)' < assets.csv
+
 ### Run command from command line
   psql development_db -c "select * from users limit 50"
 
