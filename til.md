@@ -555,6 +555,9 @@ rm ~/Library/Containers/com.docker.docker/Data/com.docker.driver.amd64-linux/Doc
 ####################################################################################################
 ## Ruby/Rails
 
+### Run rails server or rails console with DATABASE_URL specified:
+  DATABASE_URL=postgresql://postgres:password@localhost:65432/cmm_anon?pool=5 bin/rails c
+
 ### In method to binding.pry for return value but still return the original value
   .tap { |x| binding.pry } at end of query
 
