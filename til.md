@@ -617,6 +617,17 @@ in config/initializers/airbrake.rb:
 ####################################################################################################
 ## Linux
 
+### To find if all lines of a csv are uniq:
+  cat ~/dups-test.csv | wc -l
+    => 730
+  cat ~/dups-test.csv | sort -u | wc -l
+    => should be the same number
+  * make sure the original csv has an empty last line, or the sort will insert one and be off by 1
+
+### opendiff
+  shows the diff of two files
+  opendiff file1.csv file2.csv
+
 ### curl example
   curl -i -G \
   -d 'fields=name,pixel' \
