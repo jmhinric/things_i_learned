@@ -617,6 +617,9 @@ in config/initializers/airbrake.rb:
 ####################################################################################################
 ## Linux
 
+### To change to sudo access as root user:
+  sudo su -
+
 ### To find if all lines of a csv are uniq:
   cat ~/dups-test.csv | wc -l
     => 730
