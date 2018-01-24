@@ -1,4 +1,7 @@
 ## Git
+### show git config
+  git config --list
+
 ### diff'ing csvs:
   https://stackoverflow.com/questions/16804074/tool-to-diff-csv-files-at-the-field-level
   `git diff --color-words x.csv y.csv`
