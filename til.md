@@ -558,6 +558,9 @@ rm ~/Library/Containers/com.docker.docker/Data/com.docker.driver.amd64-linux/Doc
 ####################################################################################################
 ## Ruby/Rails
 
+### postgres config
+  puts ActiveRecord::Base.connection.instance_variable_get :@connection_parameters
+
 ### Run rails server or rails console with DATABASE_URL specified:
   DATABASE_URL=postgresql://postgres:password@localhost:65432/cmm_anon?pool=5 bin/rails c
 
@@ -619,6 +622,9 @@ in config/initializers/airbrake.rb:
 
 ####################################################################################################
 ## Linux
+
+### find space usage for certain directories
+du -sh /boot /data /etc /home /lost+found /media /mnt /opt /root /run /srv /tmp /usr /var
 
 ### Notes from http://www.opsschool.org/en/latest/shells_101.html
   - A shell is the command-line interface between the user and the system.
@@ -789,7 +795,7 @@ end
   brew tap homebrew/services
   brew services list
   brew services stop postgresql
-  psql -h localhost -p 5432 db_name
+  psql -h localhost -p 5432 development_db
 
 ### licecap screen recording
   brew install licecap
