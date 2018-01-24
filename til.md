@@ -621,10 +621,25 @@ in config/initializers/airbrake.rb:
 
 
 ####################################################################################################
+## Bash Scripting
+
+### Variable interpolation
+  "$filepath"_blah.sh
+  or
+  ${filepath}_blah.sh
+
+
+
+
+
+####################################################################################################
 ## Linux
 
+### find a directory
+  find ./directory_to_search -type d -name name_of_directory_to_find
+
 ### find space usage for certain directories
-du -sh /boot /data /etc /home /lost+found /media /mnt /opt /root /run /srv /tmp /usr /var
+  du -sh /boot /data /etc /home /lost+found /media /mnt /opt /root /run /srv /tmp /usr /var
 
 ### Notes from http://www.opsschool.org/en/latest/shells_101.html
   - A shell is the command-line interface between the user and the system.
