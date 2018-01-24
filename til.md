@@ -617,6 +617,27 @@ in config/initializers/airbrake.rb:
 ####################################################################################################
 ## Linux
 
+### Notes from http://www.opsschool.org/en/latest/shells_101.html
+  - A shell is the command-line interface between the user and the system.
+  - Bash is known as the Bourne-again shell, written by Brian Fox, and is a play on the name of the previously named Bourne shell (/bin/sh) written by Steve Bourne.
+  - By default, bash operates in emacs mode.
+  - $PATH environment variable defines the set of directories that the shell can search to find a command.
+  - Shell profiles are used to define a user’s environment.
+    - Global profile (/etc/profile)
+    - User profile (~/.bash_profile)
+  - To determine the process ID (PID) of the current shell, first run `ps` to find the PID, then run `echo $$` to confirm the PID.
+  - When a command is executed, it always has an exit status which defines whether or not the command was successful. For success, the exit status is 0.
+    - `echo $?` to see the exit status of the previous command.
+  - `cat ~/.bash_history` to see all stored commands.
+  - A benefit of storing command history is that the commands can be easily recalled. To execute the last command, type `!!`.
+  - To execute the nth command in history, run `!n` where n is the line number of the command as found in the output of `history`
+
+
+
+
+### To list all of the shell’s environment variables:
+  `env` or `printenv` command
+
 ### To change to sudo access as root user:
   sudo su -
 
@@ -711,6 +732,10 @@ in config/initializers/airbrake.rb:
 ### & (background job)
   `&` after a command makes it a background job- shell not wait for the program to complete before giving the prompt again:
   `cat file1 file2 file3 | sort > /dev/file4.txt &`
+
+#### PID of a background process can be found using the `$!` variable
+  - `echo $!`
+
 
 
 
