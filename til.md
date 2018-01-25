@@ -517,9 +517,13 @@ rm ~/Library/Containers/com.docker.docker/Data/com.docker.driver.amd64-linux/Doc
   \n " toggle nerd tree
 
   d " delete
-  c " change
   y " yank
+  c " change
   p " paste
+
+  D " delete to end of line
+  Y " yank to end of line
+  C " change to end of line
 
   :m line # " move current line to after line #
 
