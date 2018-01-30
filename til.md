@@ -412,6 +412,15 @@ https://devcenter.heroku.com/articles/heroku-postgres-import-export
 ####################################################################################################
 ## Docker
 
+### error in starting postgres:
+  Error message in the logs:
+  ```
+    WARNING: Service "postgres" is using volume "/var/lib/postgresql/data" from the previous container.
+    Host mapping "/Users/john.hinrichs/Development/docker_postgres_data/postgres-data" has no effect.
+    Remove the existing containers (with `docker-compose rm postgres`) to use the host volume...
+  ```
+  Do as the instruction says- `docker-compose rm postgres`
+
 ### setup
 install docker-machine to get the 'Docker Quickstart Terminal' and follow steps in the guide:
   -https://docs.docker.com/v1.8/installation/mac/
@@ -554,6 +563,16 @@ rm ~/Library/Containers/com.docker.docker/Data/com.docker.driver.amd64-linux/Doc
 ### 12/11/15 Steve SanPietro - Vim
 
   https://s3.amazonaws.com/uploads.hipchat.com/14474/1168883/ASWh5aVYFwu2mTf/sanpietro_vim_presentation_notes.txt
+
+
+
+
+
+####################################################################################################
+## Sublime
+
+### Sort selection alphabetically
+  F5
 
 
 
