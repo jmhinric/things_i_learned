@@ -658,6 +658,12 @@ in config/initializers/airbrake.rb:
 ####################################################################################################
 ## Linux
 
+### To paste into a new file: use `cat`
+  => Cmd-c (text to copy)
+  => cat > stuff.rb
+  => Cmd-v
+  => Ctrl-d (ends buffer)
+
 ### find a directory
   find ./directory_to_search -type d -name name_of_directory_to_find
 
