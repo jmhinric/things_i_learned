@@ -60,7 +60,6 @@
   rake db:migrate
   git add db/structure.sql to be committed
 
-
 ### error in trying to push because your branch is stale:
   git fetch <branch_name>
   git rebase origin/<branch_name>
@@ -100,6 +99,12 @@ git branch -D `git branch | grep -E 'FEAT'`
 ####################################################################################################
 ## Postgres
   rm /usr/local/var/postgres/postmaster.pid
+
+### loading a .zip file
+  unzip -p path_to_file | psql development_db
+
+### loading a .gz file
+  gunzip path_to_file | psql development_db
 
 ### exporting and importing subset of data
   https://gist.github.com/ddrscott/8eed79573192d982486d7e43e3f01211
