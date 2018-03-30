@@ -586,6 +586,19 @@ rm ~/Library/Containers/com.docker.docker/Data/com.docker.driver.amd64-linux/Doc
 ####################################################################################################
 ## Ruby/Rails
 
+### gemspec
+  gemspec is the authority of versions of dependencies for whoever includes the gem
+
+### Gemfile.lock
+  Symbols in versions:
+  '=' is hard lockdown version ('= 1.2.0')
+  '~>' is can use any version that is a non-major upgrade ('~> 1.2.0')
+  '<' is any version less than ('< 1.2.0')
+  '>' is any version greater than ('> 1.2.0')
+
+  Gemfile.lock PATH section is sort of scratch- list of dependencies
+  Gemfile.lock GEM section is place where actual versions are listed (implied =)
+
 ### postgres config
   puts ActiveRecord::Base.connection.instance_variable_get :@connection_parameters
 
