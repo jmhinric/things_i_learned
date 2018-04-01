@@ -586,6 +586,19 @@ rm ~/Library/Containers/com.docker.docker/Data/com.docker.driver.amd64-linux/Doc
 ####################################################################################################
 ## Ruby/Rails
 
+### rbenv
+  list local installed versions:
+  $ rbenv versions
+
+  list all available versions:
+  $ rbenv install -l
+
+  install a Ruby version:
+  $ rbenv install 2.4.0
+
+  use local version:
+  $ rbenv local 2.4.0
+
 ### gemspec
   gemspec is the authority of versions of dependencies for whoever includes the gem
 
