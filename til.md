@@ -417,6 +417,33 @@ https://devcenter.heroku.com/articles/heroku-postgres-import-export
 ####################################################################################################
 ## Docker
 
+### Postgres
+  Docker is responsible for running the postgres server, but to use certain postgres utilities (pgdump, psql),
+  postgres needs to be installed locally.  Also in toggling versions, you may need to clear all postgres images
+  from docker, update docker-compose.yml and Dockerfile, then restart docker.
+
+#### Install/Uninstall postgres versions with homebrew:
+  brew uninstall postgresql@9.3
+  brew install postgresql@9.6
+
+  Put this in ~/.zshrc or ~/.bash_profile:
+  export PATH="/usr/local/opt/postgresql@9.6/bin:$PATH"
+  To toggle versions of postgres (if you have multiple installed), update that PATH variable
+
+#### Remove image in docker:
+  Specific image:
+  docker rmi postgres:9.6.6
+
+  List all images:
+  docker images
+
+  Remove all images:
+  docker rm -v $(docker ps -aq), then
+  docker rmi $(docker images -q)
+
+### Logs
+  docker logs development_postgres_1
+
 ### error in starting postgres:
   Error message in the logs:
   ```
