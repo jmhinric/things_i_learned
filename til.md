@@ -430,6 +430,9 @@ https://devcenter.heroku.com/articles/heroku-postgres-import-export
   export PATH="/usr/local/opt/postgresql@9.6/bin:$PATH"
   To toggle versions of postgres (if you have multiple installed), update that PATH variable
 
+  Note: postgres 9.3 is unavailable in homebrew.  To get it:
+  https://github.com/petere/homebrew-postgresql
+
 #### Remove image in docker:
   Specific image:
   docker rmi postgres:9.6.6
