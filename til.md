@@ -98,6 +98,11 @@ git branch -D `git branch | grep -E 'FEAT'`
 
 ####################################################################################################
 ## Postgres
+
+### manually run analyze on a table:
+  ANALYZE VERBOSE [tablename]
+
+### (not sure what this is)
   rm /usr/local/var/postgres/postmaster.pid
 
 ### loading a .zip file
