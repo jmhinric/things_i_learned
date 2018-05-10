@@ -99,6 +99,24 @@ git branch -D `git branch | grep -E 'FEAT'`
 ####################################################################################################
 ## Postgres
 
+### explanation of group_by:
+  SELECT a, b, COUNT(*)
+  FROM Table
+  WHERE c > 100
+  GROUP BY a, b
+  HAVING COUNT(*) > 10;
+
+  The evaluation of this query can be seen as the following steps:
+
+  1. Perform the WHERE, eliminating rows that do not satisfy it.
+  2. Group the table into subsets based upon the values of a and b (each tuple in each subset has the same values of a and b).
+  3. Eliminate subsets that do not satisfy the HAVING condition
+  4. Process each subset outputting the values as indicated in the SELECT part of the query. This creates one output tuple per subset left after step 3.
+
+  You can extend this to any complex query there Table can be any complex query that return a table (a cross product, a join, a UNION, etc).
+
+  https://stackoverflow.com/questions/16327954/using-group-by-and-having-clause?utm_medium=organic&utm_source=google_rich_qa&utm_campaign=google_rich_qa
+
 ### manually run analyze on a table:
   ANALYZE VERBOSE [tablename]
 
