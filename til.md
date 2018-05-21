@@ -919,6 +919,16 @@ end
 ####################################################################################################
 ## Homebrew
 
+### override most recent version of postgres:
+  http://zoltanaltfatter.com/2017/09/07/Install-a-specific-version-of-formula-with-homebrew/
+
+  cd "$(brew --repo homebrew/core)"
+  git log Formula/postgresql@9.6.rb
+  git checkout -b postgresql-9.6.8 65767bd06c238afc7ea772e71db2e1ca3e9a9b39
+  brew unlink postgresql@9.6
+  HOMEBREW_NO_AUTO_UPDATE=1 brew install postgresql@9.6
+
+
 ### postgres
   brew tap homebrew/services
   brew services list
