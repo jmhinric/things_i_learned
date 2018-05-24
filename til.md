@@ -878,6 +878,14 @@ in config/initializers/airbrake.rb:
 
 ####################################################################################################
 ## Redis/Sidekiq
+
+### Pause select queues
+allowed = %w(default high_priority)
+Sidekiq::ProcessSet.new
+  .map {|process| process['queues']}.flatten.uniq.sort
+  .select { |q| !allowed.include?(q) }
+  .map { |q| Sidekiq::Queue.new(q).pause! }
+
 ### Monitor redis
 redis-cli monitor
 
