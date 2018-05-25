@@ -440,6 +440,9 @@ https://devcenter.heroku.com/articles/heroku-postgres-import-export
 ####################################################################################################
 ## Docker
 
+### Run with file
+  docker-compose -f docker/dev/docker-compose.yml -f docker/dev/docker-compose.optional.yml up
+
 ### Postgres
   Docker is responsible for running the postgres server, but to use certain postgres utilities (pgdump, psql),
   postgres needs to be installed locally.  Also in toggling versions, you may need to clear all postgres images
