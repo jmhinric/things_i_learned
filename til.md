@@ -1,4 +1,7 @@
 ## Git
+### git gc
+  Cleanup unnecessary files and optimize the local repository
+
 ### show git config
   git config --list
 
