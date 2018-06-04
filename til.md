@@ -748,6 +748,9 @@ in config/initializers/airbrake.rb:
 ####################################################################################################
 ## Linux
 
+### After rebooting machine if you get the error message `Permission denied (publickey)`:
+  ssh-add -K ~/.ssh/id_rsa
+
 ### To paste into a new file: use `cat`
   => Cmd-c (text to copy)
   => cat > stuff.rb
