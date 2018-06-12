@@ -102,7 +102,7 @@ git branch -D `git branch | grep -E 'FEAT'`
 ####################################################################################################
 ## Postgres
 
-### explanation of group_by:
+### explanation of GROUP BY:
   SELECT a, b, COUNT(*)
   FROM Table
   WHERE c > 100
