@@ -664,9 +664,10 @@ rm ~/Library/Containers/com.docker.docker/Data/com.docker.driver.amd64-linux/Doc
 ### Gemfile.lock
   Symbols in versions:
   '=' is hard lockdown version ('= 1.2.0')
-  '~>' is can use any version that is a non-major upgrade ('~> 1.2.0')
+  '~>' known as twiddle-wakka.  '~> 2.2' means ['>= 2.2.0', '< 3.0'], whereas '~> 2.2.0' means ['>= 2.2.0', '< 2.3.0']
   '<' is any version less than ('< 1.2.0')
   '>' is any version greater than ('> 1.2.0')
+  https://guides.rubygems.org/patterns/
 
   Gemfile.lock PATH section is sort of scratch- list of dependencies
   Gemfile.lock GEM section is place where actual versions are listed (implied =)
