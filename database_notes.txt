@@ -1,0 +1,94 @@
+analyze
+vaccuum process
+query plan
+database statistic
+dirtied- updates, inserts, deletes
+
+transaction isolation
+
+stats table:
+used by the query plan to figure out which query strategy to use.  If there are more than x rows, read one certain way.  Else, read a different way.
+If the stats are off, an inefficient plan may be used.
+When database is made in initial environment, analyze hasn't been run, so query plans are off.  Within a transaction, analyze never gets a chance to run, which is why the second time through it's much faster.
+
+Transaction isolation causes many virtual rows to possibly be made, until a certain threshold is reached where vacuum is kicked off to clean up those unused rows. If too many virtual rows get built up, the analyze plan can get thrown off resulting in inefficient queries.
+
+MVCC- multi version concurrency controls
+
+when pg_dump, pg_restore is used:
+all inserts are made, then db is immediately shut down.  Analyze doesn't run, so stats don't get updated.
+
+be rails dbconsole
+password from `cat etc/centro/cmm/database.yml`
+
+isolation levels
+
+begin transaction;
+select * from auth_users where email = 'blah@ex.com';
+commit; or rollback;
+
+select * from pg_locks
+select * from pg_stat_activity
+
+access share lock
+exclusive lock
+access read share
+
+
+6/7/18
+micro-service architecture- circuit breaker pattern
+
+yum package manager for AWS web app
+RPM- redhat package manager- installing binary- binary, pre and post install
+yum- package repo for RPMs to install things easily
+  yum search httpd
+  yum info httpd
+  yum install httpd
+httpd is apache web server
+yum install nmap
+yum also does dependency management
+
+package_all.sh - Basis
+fpm- fucking package manager
+ssh tunnel to be able to view the web page with private IP address
+
+
+
+
+
+Networking:
+TCP/IP book from Jeff Smith
+
+IP Addresses:
+10.1.15.5
+10.1.15 is the Network,
+5 is the host
+- together the whole number is the network
+- 32 bits (4 numbers, each 0-255)
+- /24 or /16 - CIDR notation
+- 255.255.255.0 is the default subnet mask
+- host has 254 choices
+  - 0 is reserved to denote the network itself
+  - 255 is reserved as a broadcast address to do tasks associated with things like querying hosts
+
+- DHCP server is dynamic host configuration protocol
+  - server that assigns you an IP address on a network
+  - IP addresses can expire or have a limited number available
+
+- DNS server translates URL to IP address
+  - linux commands:
+    - `ifconfig`: inet shows your IP
+    - `dig`:
+      - `dig www.amazon.com ANY` - gives CNAME
+      - `dig www.cdn.amazon.com A` - gives A record
+        - A Records are the most basic type of DNS record and are used to point a domain or subdomain to an IP address. Assigning a value to an A record is as simple as providing your DNS management panel with an IP address to where the domain or subdomain should point and a TTL
+      - `dig www.cdn.amazon.com NS` - give nameserver for ww.cdn.amazon.com
+    - cat /etc/resolv.conf
+    - netstat -nr
+      - gives routing tables
+
+
+- A default gateway serves as an access point or IP router that a networked computer uses to send information to a computer in another network or the internet. Default simply means that this gateway is used by default, unless an application specifies another gateway.
+
+
+
