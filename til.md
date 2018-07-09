@@ -861,7 +861,7 @@ in config/initializers/airbrake.rb:
   `diff a1.csv a2.csv | wc -l`
 
 ### Disconnected ssh session
-  To kill it:  <Enter>, then <Shift> + ~
+  To kill it:  <Enter>, then <Shift> then ~ then .
 
 ### cron jobs
   `0 12 2 * * cd /some/path/blah && RAILS_ENV=development bundle exec rake some_task:execute` - 12:00 on second day of month
