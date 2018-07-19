@@ -914,6 +914,8 @@ queue.each do |job|
   job.delete if job.jid == 'abcdef1234567890'
 end
 
+### delete all scheduled jobs
+Sidekiq::ScheduledSet.new.map { |j| j.delete }
 
 
 
