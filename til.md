@@ -747,7 +747,33 @@ in config/initializers/airbrake.rb:
 
 
 ####################################################################################################
+## iTerm2
+
+### Show timestamps
+  Shift-Cmd-E
+
+
+
+
+####################################################################################################
 ## Linux
+
+### ssh args
+  1) -t
+    `ssh jumpbox -- top` gives error `TERM environment variable not set.`
+
+    -t starts a shell (forwards info about the current shell)
+    ssh jumpbox -t -- top
+
+  2) --
+    separator
+    ssh jumpbox -- ls
+
+
+
+
+### sudo start shell
+  sudo -u username -s
 
 ### After rebooting machine if you get the error message `Permission denied (publickey)`:
   ssh-add -K ~/.ssh/id_rsa
