@@ -443,6 +443,9 @@ https://devcenter.heroku.com/articles/heroku-postgres-import-export
 ####################################################################################################
 ## Docker
 
+### open a shell in a container
+  docker-compose exec postgres bash
+
 ### Run with file
   docker-compose -f docker/dev/docker-compose.yml -f docker/dev/docker-compose.optional.yml up
 
