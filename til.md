@@ -769,11 +769,20 @@ in config/initializers/airbrake.rb:
     separator
     ssh jumpbox -- ls
 
-
-
-
 ### sudo start shell
-  sudo -u username -s
+  sudo -s
+
+### du - file sizes
+  sudo du -hd2 / | sort -k1h
+
+    du:
+      -h  : human readable
+      -d2 : depth 2
+      /   : root directory
+
+    sort:
+      -k1 : first column
+      -h  : human sizes
 
 ### After rebooting machine if you get the error message `Permission denied (publickey)`:
   ssh-add -K ~/.ssh/id_rsa
