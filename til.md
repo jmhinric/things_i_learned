@@ -189,6 +189,9 @@ git branch -D `git branch | grep -E 'FEAT'`
       * `-d` (database name)
       * `-v` (verbose)
 
+  Use a zipped dump:
+  dropdb -h localhost development_db && createdb -h localhost development_db && psql -h localhost development_db < db/structure.sql && unzip -p /Users/john.hinrichs/Desktop/db-dump.sql.zip | psql -h localhost development_db
+
 ### Dump from a remote environment:
   - pg_dump -h 10.0.0.100 -U username staging_env > /tmp/staging_env_20160511.sql
   - pg_dump -Fc -d staging_env -U username > /tmp/staging_env_20160511.sql.gz
