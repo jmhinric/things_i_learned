@@ -1,4 +1,8 @@
 ## Git
+### ignore file
+  git update-index --assume-unchanged Procfile.dev
+  https://stackoverflow.com/questions/1753070/how-do-i-configure-git-to-ignore-some-files-locally
+
 ### git gc
   Cleanup unnecessary files and optimize the local repository
 
