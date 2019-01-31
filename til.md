@@ -106,6 +106,11 @@ git branch -D `git branch | grep -E 'FEAT'`
 ####################################################################################################
 ## Postgres
 
+### Start postgres:
+  pg_ctl -D /usr/local/var/postgres -l /usr/local/var/postgres/server.log start
+#### as daemon:
+  postgres -D /usr/local/var/postgres
+
 ### explanation of GROUP BY:
   SELECT a, b, COUNT(*)
   FROM Table
