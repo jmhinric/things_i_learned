@@ -1058,3 +1058,38 @@ payload['last_name'] = 'Bar3'
 payload
 r = requests.post(url, params=payload)
 r.status_code # should be 201
+
+
+
+
+
+####################################################################################################
+## Mobile (React Native)
+### Running iOS:
+- delete /node_modules and /Pods, then run `yarn install` and `pod install`
+- from app root run `yarn start`
+- set API_URL to http://localhost:3001 in .env
+- `react-native run-ios`
+
+### Running Android:
+- run the Emulator through Android Studio (button in upper right)
+- from app root run `yarn start`
+- set API_URL to http://10.0.2.2:3001 in .env
+- from app root run `react-native run-android`
+
+### Deploy iOS
+- make sure API_URL is production in .env file
+- set app name in app.json and index.js
+- open the workspace in XCode, not the project
+- Build the project- Generic iOS device
+- With the workspace selected in the left sidebar (with folder icon selected), in the "General" section you can bump build and version numbers
+- in XCode- Product -> Archive
+- after Archive finishes, Window -> Organizer...go through the defaults
+
+### Debugging:
+#### iOS:
+Command-D opens dev tools menu
+For console and breakpoints, open Safari -> Develop -> device -> debug js
+#### Android:
+Command-M opens dev tools menu
+Go to http://localhost:8081/debugger-ui/ in Chrome, open dev tools.  Do Command-M in the Emulator -> Remote JS debugging
