@@ -1093,3 +1093,7 @@ For console and breakpoints, open Safari -> Develop -> device -> debug js
 #### Android:
 Command-M opens dev tools menu
 Go to http://localhost:8081/debugger-ui/ in Chrome, open dev tools.  Do Command-M in the Emulator -> Remote JS debugging
+
+#### Icons for iOS and Android:
+https://medium.com/@scottianstewart/react-native-add-app-icons-and-launch-screens-onto-ios-and-android-apps-3bfbc20b7d4c
+
