@@ -1,4 +1,7 @@
 ## Git
+### git mv and rename files from snakecase to camelcase
+  for file in ./* ; do git mv "$file" "$(echo $file | gsed -r 's/(^|_|\.\/)([a-z])/\U\2/g')" ; done
+
 ### ignore file
   git update-index --assume-unchanged Procfile.dev
   https://stackoverflow.com/questions/1753070/how-do-i-configure-git-to-ignore-some-files-locally
