@@ -1,3 +1,42 @@
+# Notes:
+
+## user/roles:
+list all roles:
+SELECT * FROM pg_catalog.pg_user;
+
+psql
+\du
+same as:
+
+SELECT
+  u.usename AS "Role name",
+  CASE
+  WHEN u.usesuper AND u.usecreatedb THEN CAST('superuser, create database' AS pg_catalog.text)
+  WHEN u.usesuper THEN CAST('superuser' AS pg_catalog.text)
+  WHEN u.usecreatedb THEN CAST('create database' AS pg_catalog.text)
+  ELSE CAST('' AS pg_catalog.text)
+  END AS "Attributes"
+FROM pg_catalog.pg_user u
+ORDER BY 1
+;
+
+To toggle whether the database requires a password: change between `md5` and `trust` in this file:
+/usr/local/var/postgres/pg_hba.conf
+
+To reset a user's password:
+https://dev.to/theoklitosbam7/how-to-reset-your-forgotten-password-in-postgresql-4a7g
+
+To create a user with read permissions:
+CREATE USER guest WITH PASSWORD 'testpassword';
+GRANT ALL PRIVILEGES ON ALL TABLES IN SCHEMA public TO myuser;
+OR readonly:
+GRANT SELECT ON ALL TABLES IN SCHEMA public TO myuser;
+
+
+
+
+
+##############################################################
 analyze
 vaccuum process
 query plan
