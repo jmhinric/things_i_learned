@@ -1,4 +1,10 @@
 ## Git
+### Deleting branches matching a pattern
+  git branch | grep "<pattern>" | xargs git branch -D
+
+### Find all branches not matching a pattern
+  git branch | grep -v -E "(hackathon|master)"
+
 ### git mv and rename files from snakecase to camelcase
   for file in ./* ; do git mv "$file" "$(echo $file | gsed -r 's/(^|_|\.\/)([a-z])/\U\2/g')" ; done
 
